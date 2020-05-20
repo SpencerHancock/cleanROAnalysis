@@ -41,7 +41,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css', "https://s
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
-app.layout = html.Div(style={"margin":"auto", "text-align":"center"},children=[
+app.layout = html.Div(style={"margin":"auto", "text-align":"center", "width":"100vw", "overflow":"hidden"},children=[
     #==================================== Bullet Graph ============================================
     html.Div(style={"height":"100vh"}, children=[
     html.Div(style = {"height":"80%"}, className="row", children=[
