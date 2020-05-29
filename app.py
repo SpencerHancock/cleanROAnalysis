@@ -129,7 +129,7 @@ else:
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 app.layout = html.Div(className="bg-light",style={"margin":"0", "text-align":"center", "width":"100vw", 
-                      "overflow":"hidden", "font-family": "Courier New, monospace", "color":"grey"},
+                      "overflow":"hidden", "font-family": "Courier New, monospace", "color":"#36454f"},
                       children=[
     #==================================== Header ==================================================
     #this will include the pani logo on the far left, links, etc.
@@ -334,8 +334,7 @@ def display(dash1, dash2, dash3, day):
         font=
         dict(
             family="Courier New, monospace",
-            size=18,
-            color="#7f7f7f"))
+            color="#36454f"))
 
     return fig
 
