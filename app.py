@@ -129,7 +129,7 @@ else:
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 app.layout = html.Div(className="bg-light",style={"margin":"0", "text-align":"center", "width":"100vw", 
-                      "overflow":"hidden", "font-family": "Roboto Mono, monospace", "font-color":"lightgrey"},
+                      "overflow":"hidden", "font-family": "Courier New, monospace", "color":"grey"},
                       children=[
     #==================================== Header ==================================================
     #this will include the pani logo on the far left, links, etc.
@@ -147,7 +147,7 @@ app.layout = html.Div(className="bg-light",style={"margin":"0", "text-align":"ce
         ]),
         #================================================= hehehehehehe ==================================================
         html.Div(className="bg-white p-5 mt-5", children=[
-            html.A(href="https://www.match.com/cpx/en-us/landing/display/84123/?trackingid=526925&bannerid=3073067&gclid=CjwKCAjw5cL2BRASEiwAENqAPqjrC34vMy-EHns5Af_qVspaI5pxwI1Zv1Y33BnCLU_IUft7bSYrURoC1DAQAvD_BwE", children=[
+            html.A(href="https://www.christianmingle.com/en-us", children=[
             html.Img(style={"width":"100%"}, src="https://cminglestudy.files.wordpress.com/2013/09/christianmingle.png")
             ])
         ]),
@@ -324,13 +324,18 @@ def display(dash1, dash2, dash3, day):
     elif clicked == "dash3.n_clicks":
         fig = fig3
 
-    fig.update_layout(shapes=[
+    fig.update_layout(
+        shapes=[
+            dict(
+            type= 'line',
+            yref= 'paper', y0= 0, y1= 1,
+            xref= 'x', x0= df.Datetime.at[day], x1= df.Datetime.at[day]
+            )],
+        font=
         dict(
-        type= 'line',
-        yref= 'paper', y0= 0, y1= 1,
-        xref= 'x', x0= df.Datetime.at[day], x1= df.Datetime.at[day]
-        )
-    ])
+            family="Courier New, monospace",
+            size=18,
+            color="#7f7f7f"))
 
     return fig
 
